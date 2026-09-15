@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Subscribe Verification</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .box {
+      width: 90%;
+      max-width: 400px;
+      background: #222;
+      padding: 30px 20px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #bbb;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .subscribe {
+      background: #ff0000;
+      color: white;
+    }
+
+    .verify {
+      background: #fff;
+      color: #111;
+    }
+
+    .unlock {
+      display: none;
+      background: #00a000;
+      color: white;
+    }
+
+    #status {
+      margin-top: 18px;
+      color: #00ff88;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>🔐 Subscribe Verification</h1>
+
+    <p>Subscribe to our YouTube channel and verify below.</p>
+
+    <button class="subscribe" onclick="openYouTube()">
+      🔴 Subscribe on YouTube
+    </button>
+
+    <button class="verify" onclick="verify()">
+      ✅ Verify Subscribe
+    </button>
+
+    <div id="status"></div>
+
+    <button class="unlock" id="unlock" onclick="openLink()">
+      🔓 Unlock Link
+    </button>
+
+  </div>
+
+  <script>
+
+    // নিজের YouTube channel link এখানে বসাও
+    const youtubeChannel = "https://www.youtube.com/@YOUR_CHANNEL";
+
+    // Verify করার পরে যে link দেখাতে চাও সেটা এখানে বসাও
+    const secretLink = "https://example.com";
+
+
+    function openYouTube() {
+      window.open(youtubeChannel, "_blank");
+    }
+
+
+    function verify() {
+
+      document.getElementById("status").innerText =
+        "Checking subscription...";
+
+      setTimeout(function() {
+
+        document.getElementById("status").innerText =
+          "✅ Demo verification successful!";
+
+        document.getElementById("unlock").style.display =
+          "block";
+
+      }, 1500);
+    }
+
+
+    function openLink() {
+      window.open(secretLink, "_blank");
+    }
+
+  </script>
+
+</body>
+</html>
